@@ -14,4 +14,15 @@ $('document').ready(() => {
       $('.amenities H4').html('&nbsp;');
     }
   });
+  $.ajax({
+    // localhost instead of 0.0.0.0 to work on windows
+    url: 'http://localhost:5001/api/v1/status/',
+    success: (data) => {
+      if (data.status === 'OK') {
+        $('#api_status').addClass('available');
+      } else {
+        $('#api_status').removeClass('available');
+      }
+    }
+  });
 });
