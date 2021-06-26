@@ -1,14 +1,19 @@
-# AirBnB Clone - The Console
+# AirBnB Clone
 <p align="center">
   <img width="100%" height="auto" src="./readme_images/hbnb.png">
 </p>
 
 ## Description  
-This project cover fundamental concepts of higher level programming. The goal is to eventually deploy a server with a clone of the web application of the popular digital platform dedicated to the supply of accommodation AirBnB. built in phyton, HTML, CSS JavaScript and MySQL. Deployed on two Linux servers each with an application server made in Flask, a NGINX web server and a MySQL database in master-slave configuration, with a HAProxy load balancer at the front of the whole architecture.
+This project cover fundamental concepts of higher level programming. The goal is to eventually deploy a server with a clone of the web application of the popular digital platform dedicated to the supply of accommodation AirBnB. Built in Phyton (Flask), HTML, CSS JavaScript(jQuery) and MySQL.
 
 <p align="center">
   <img width="100%" height="auto" src="./readme_images/hbnb_step5.png">
 </p>
+
+This is the final result of a project that was carried out from scratch in four parts, although for each part except the first a code base developed by other Holbertonschool colleagues was used.
+* [AirBnB_clone_v3](https://github.com/santiagopemo/AirBnB_clone_v3)
+* [AirBnB_clone_v2](https://github.com/santiagopemo/AirBnB_clone_v2)
+* [AirBnB_clone](https://github.com/santiagopemo/AirBnB_clone)
 
 ## Table of Content
 * [Environment](#environment)
@@ -39,19 +44,6 @@ $ cd AirBnb_clone_v4
 ```
 $ pip3 install -r requirements.txt
 ```
-Or you can manually install the following dependencies:
-```
-pip3 install mysqlclient
-```
-```
-pip3 install SQLAlchemy
-```
-```
-pip3 install flask_cors
-```
-```
-pip3 install flasgger
-```
 ### Setting up the database
 * Once you have installed the MySQL-server make sure to have the service running:
 ```
@@ -79,6 +71,42 @@ cat 100-dump.sql | mysql -hlocalhost -uroot -p
 **Note:** The operation of the two previous commands depend on how you have configured your mysql server, in general terms these commands work with the default configuration.
 
 ## Usage
+Assuming that all the steps of the installation were completed successfully, you can use the application in the following way
+### Environment Variables
+The following are the environment variables necessary to run the application  
+* HBNB_ENV: running environment. It can be “dev” or “test”
+* HBNB_MYSQL_USER: the username of your MySQL
+* HBNB_MYSQL_PWD: the password of your MySQL
+* HBNB_MYSQL_HOST: the hostname of your MySQL
+* HBNB_MYSQL_DB: the database name of your MySQL
+* HBNB_TYPE_STORAGE: the type of storage used. It can be “file” (using FileStorage) or db (using DBStorage)
+### API
+To run the API simply enter the following command  
+```
+$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db HBNB_API_PORT=5001 python3 -m api.v1.app
+```
+**Note:** As you can see, the previous command was executed with a series of environment variables which may vary depending on the configuration of your environment, by default Flask aplications runs in port 5000, but since it is necessary to deploy a server for the api and another for the views, we run it on port 5001 using the environment variable HBNB_API_PORT=5001  
+  
+Once the API is launched, you can access its documentation at endpoint `/apidocs/`
+<p align="center">
+  <img width="100%" height="auto" src="./readme_images/apidocs.PNG">
+</p>
+
+### Web Dynamic
+To run the dynamic views simply enter the following command  
+```
+$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.101-hbnb
+```
+Once you launch the server you can go to the endpoint `/101-hbnb/`to see the view. The content depends on whether the API described in the previous step is working correctly or not. If the point in the upper right corner is red it means that a connection with the API could be established, if it is gray instead, it means the opposite
+<p >
+  <img width="400px" height="auto" src="./readme_images/web_dynamic_on.PNG">
+  <img width="400px" height="auto" src="./readme_images/web_dynamic_off.PNG">
+</p>
+
+
+
+
+
 
 ## File Descriptions
 [console.py](console.py) - the console contains the entry point of the command interpreter. 
