@@ -97,13 +97,25 @@ To run the dynamic views simply enter the following command
 ```
 $ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.101-hbnb
 ```
-Once you launch the server you can go to the endpoint `/101-hbnb/`to see the view. The content depends on whether the API described in the previous step is working correctly or not. If the point in the upper right corner is red it means that a connection with the API could be established, if it is gray instead, it means the opposite
-<p >
+Once you launch the server you can go to the endpoint `/101-hbnb/`to see the view. The content depends on whether the API described in the previous step is working correctly or not. If the point in the upper right corner is red it means that a connection with the API could be established, if it is gray instead, it means the opposite.
+<p align="center">
   <img width="400px" height="auto" src="./readme_images/web_dynamic_on.PNG">
   <img width="400px" height="auto" src="./readme_images/web_dynamic_off.PNG">
 </p>
 
+### Web Flask
+It is also possible to deploy an oriented server based on a monolithic architecture, unlike the previous two, oriented to services, running the following command:
+```
+HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_flask.100-hbnb
+```
+Once you launch the server you can go to the endpoint `/hbnb/`to see the web site.
+<p align="center">
+  <img width="100%" height="auto" src="./readme_images/web_flask.PNG">
+</p>
 
+**Note:** By default Flask runs its applications on port 5000, so it is recommended to deactivate the server in the previous point before deploying this, or change the port.
+
+## Console
 
 
 
