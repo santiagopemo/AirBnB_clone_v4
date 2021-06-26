@@ -21,14 +21,14 @@ This project cover fundamental concepts of higher level programming. The goal is
 * [License](#license)
 
 ## Environment
-This project is interpreted/tested on Ubuntu (20.04.1 LTS) using python3  (3.8.5), and MySql (8.0.25)
+This project was interpreted/tested on Ubuntu (20.04.1 LTS) using python3  (3.8.5), and MySql (8.0.25)
 
 ## Installation
-* First you must have a my sql and python3 database server installed:
-**MySql**
-[Install MySQL Server on the Ubuntu operating system](https://docs.rackspace.com/support/how-to/install-mysql-server-on-the-ubuntu-operating-system/)
-**Python 3**
-[How to Install Python 3 on Ubuntu 18.04 or 20.04](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu)
+* First you must have a my sql and python3 database server installed:  
+**MySql**  
+[Install MySQL Server on the Ubuntu operating system](https://docs.rackspace.com/support/how-to/install-mysql-server-on-the-ubuntu-operating-system/)  
+**Python 3**  
+[How to Install Python 3 on Ubuntu 18.04 or 20.04](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu)  
 * Clone this repository:  
 ```
 $ git clone "https://github.com/santiagopemo/AirBnB_clone_v4"
