@@ -39,6 +39,19 @@ $ cd AirBnb_clone_v4
 ```
 $ pip3 install -r requirements.txt
 ```
+Or you can manually install the following dependencies:
+```
+pip3 install mysqlclient
+```
+```
+pip3 install SQLAlchemy
+```
+```
+pip3 install flask_cors
+```
+```
+pip3 install flasgger
+```
 ### Setting up the database
 * Once you have installed the MySQL-server make sure to have the service running:
 ```
@@ -64,6 +77,8 @@ or
 cat 100-dump.sql | mysql -hlocalhost -uroot -p
 ```
 **Note:** The operation of the two previous commands depend on how you have configured your mysql server, in general terms these commands work with the default configuration.
+
+## Usage
 
 ## File Descriptions
 [console.py](console.py) - the console contains the entry point of the command interpreter. 
