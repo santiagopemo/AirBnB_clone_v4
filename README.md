@@ -25,10 +25,8 @@ This project was interpreted/tested on Ubuntu (20.04.1 LTS) using python3  (3.8.
 
 ## Installation
 * First you must have a my sql and python3 database server installed:  
-**MySql**  
-[Install MySQL Server on the Ubuntu operating system](https://docs.rackspace.com/support/how-to/install-mysql-server-on-the-ubuntu-operating-system/)  
-**Python 3**  
-[How to Install Python 3 on Ubuntu 18.04 or 20.04](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu)  
+**MySql:** [Install MySQL Server on the Ubuntu operating system](https://docs.rackspace.com/support/how-to/install-mysql-server-on-the-ubuntu-operating-system/)  
+**Python 3:** [How to Install Python 3 on Ubuntu 18.04 or 20.04](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu)  
 * Clone this repository:  
 ```
 $ git clone "https://github.com/santiagopemo/AirBnB_clone_v4"
@@ -41,7 +39,31 @@ $ cd AirBnb_clone_v4
 ```
 $ pip3 install -r requirements.txt
 ```
+### Setting up the database
+* Once you have installed the MySQL-server make sure to have the service running:
+```
+$ sudo service mysql start
+```
+* Run the commands in the [setup_mysql_dev.sql](./setup_mysql_dev.sql) file to prepare the development database:
+```
+cat setup_mysql_dev.sql | sudo mysql
+```
+or
+```
+cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -p
+```
+**Note:** The operation of the two previous commands depend on how you have configured your mysql server, in general terms these commands work with the default configuration.
 
+### Populate the database
+Files [7-dump.sql](./7-dump.sql), [10-dump.sql](./10-dump.sql) and [100-dump.sql](./100-dump.sql) have SQL statements that you can run to populate the database:
+```
+cat 100-dump.sql | sudo mysql
+```
+or
+```
+cat 100-dump.sql | mysql -hlocalhost -uroot -p
+```
+**Note:** The operation of the two previous commands depend on how you have configured your mysql server, in general terms these commands work with the default configuration.
 
 ## File Descriptions
 [console.py](console.py) - the console contains the entry point of the command interpreter. 
