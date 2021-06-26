@@ -2,8 +2,13 @@
 <p align="center">
   <img width="100%" height="auto" src="./readme_images/hbnb.png">
 </p>
-this project cover fundamental concepts of higher level programming. The goal is to eventually deploy a server with a clone of the web application of the popular digital platform dedicated to the supply of accommodation AirBnB.
 
+## Description  
+This project cover fundamental concepts of higher level programming. The goal is to eventually deploy a server with a clone of the web application of the popular digital platform dedicated to the supply of accommodation AirBnB. built in phyton, HTML, CSS JavaScript and MySQL. Deployed on two Linux servers each with an application server made in Flask, a NGINX web server and a MySQL database in master-slave configuration, with a HAProxy load balancer at the front of the whole architecture.
+
+<p align="center">
+  <img width="100%" height="auto" src="./readme_images/hbnb_step5.png">
+</p>
 
 ## Table of Content
 * [Environment](#environment)
@@ -16,13 +21,27 @@ this project cover fundamental concepts of higher level programming. The goal is
 * [License](#license)
 
 ## Environment
-This project is interpreted/tested on Ubuntu 14.04 LTS using python3 (version 3.4.3)
+This project is interpreted/tested on Ubuntu (20.04.1 LTS) using python3  (3.8.5), and MySql (8.0.25)
 
 ## Installation
-* Clone this repository: `git clone "https://github.com/alexaorrico/AirBnB_clone.git"`
-* Access AirBnb directory: `cd AirBnB_clone`
-* Run hbnb(interactively): `./console` and enter command
-* Run hbnb(non-interactively): `echo "<command>" | ./console.py`
+* First you must have a my sql and python3 database server installed:
+**MySql**
+[Install MySQL Server on the Ubuntu operating system](https://docs.rackspace.com/support/how-to/install-mysql-server-on-the-ubuntu-operating-system/)
+**Python 3**
+[How to Install Python 3 on Ubuntu 18.04 or 20.04](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu)
+* Clone this repository:  
+```
+$ git clone "https://github.com/santiagopemo/AirBnB_clone_v4"
+```
+* Access to the AirBnb_clone_v4 directory:  
+```
+$ cd AirBnb_clone_v4
+```
+* Once you have installed python3 install all pip3 dependencies in the [requirements.txt](./requirements.txt) file: 
+```
+$ pip3 install -r requirements.txt
+```
+
 
 ## File Descriptions
 [console.py](console.py) - the console contains the entry point of the command interpreter. 
