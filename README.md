@@ -81,6 +81,7 @@ The following are the environment variables necessary to run the application
 * HBNB_MYSQL_DB: the database name of your MySQL
 * HBNB_TYPE_STORAGE: the type of storage used. It can be “file” (using FileStorage) or db (using DBStorage)
 ### API
+[api/](./api/)  
 To run the API simply enter the following command  
 ```
 $ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db HBNB_API_PORT=5001 python3 -m api.v1.app
@@ -93,6 +94,7 @@ Once the API is launched, you can access its documentation at endpoint `/apidocs
 </p>
 
 ### Web Dynamic
+[web_dynamic/](./web_dynamic/)  
 To run the dynamic views simply enter the following command  
 ```
 $ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.101-hbnb
@@ -104,6 +106,7 @@ Once you launch the server you can go to the endpoint `/101-hbnb/`to see the vie
 </p>
 
 ### Web Flask
+[web_flask/](./web_flask/)  
 It is also possible to deploy an oriented server based on a monolithic architecture, unlike the previous two, oriented to services, running the following command:
 ```
 HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_flask.100-hbnb
@@ -115,7 +118,7 @@ Once you launch the server you can go to the endpoint `/hbnb/`to see the web sit
 
 **Note:** By default Flask runs its applications on port 5000, so it is recommended to deactivate the server in the previous point before deploying this, or change the port.
 ## Web Static
-Another version of this project is displaying static content which can be seen in the `/web_static/` folder.  
+Another version of this project is displaying static content which can be seen in the [web_static/](./web_static/) folder.  
 In addition to the static content, different programs were made to deploy it on remote servers using Bash scripts and Python scripts with Fabric
 ### Deployment
 To make the deployment you first need to access the server create a new user called `ubuntu` and run the script [0-setup_web_static.sh](./0-setup_web_static.sh)
@@ -128,9 +131,9 @@ $ ./0-setup_web_static.sh
 
 This script will install the NGINX web server and configure it to run the application creating the necessary directories for it.  
 
-Once the servers on which you want to perform the deployment have been configured, execute the script [3-deploy_web_static.py](./3-deploy_web_static.py) using Fabric, that creates and distributes an archive to the web servers  
+Once the servers on which you want to perform the deployment have been configured, execute the script [3-deploy_web_static.py](./3-deploy_web_static.py) using Fabric, that creates and distributes an archive to the web servers  .
 
-Before executing the script, you must place the IP addresses of the servers to which you want to distribute the new file, for this you must enter the file [3-deploy_web_static.py](./3-deploy_web_static.py), in line 10 in the variable env.host assign a list with the IPs , by default this variable has assigned IP addresses which must be changed
+Before executing the script, you must place the IP addresses of the servers to which you want to distribute the new file, for this you must enter the file [3-deploy_web_static.py](./3-deploy_web_static.py), in line 10 in the variable `env.host` and assign a list with the IPs , by default this variable has assigned IP addresses which must be changed.
 ```
 10  env.hosts = ['<your server IP address>', '<your other server IP address>', ....]
 ```
@@ -143,13 +146,37 @@ where `<my_ssh_private_key>` is the private key to access your servers via SSH
 
 This command will generate a directory called `/versions/` in which the files generated with the name `web_static_<year><month><day><hour><minute><second>.tgz` will be found.  
 
-Once the previous steps have been carried out, the content can be viewed by accessing the url `http://<your_server_IP>/hbnb_static/102-index.html`  
+Once the previous steps have been carried out, the content can be viewed by accessing the url `http://<your_server_IP>/hbnb_static/102-index.html`.  
 <p align="center">
   <img width="100%" height="auto" src="./readme_images/web_static.PNG">
 </p>
 
 ## Console
+One of the main features of this project is its console from which you can test the application's backend
+to access it, you must first be at the root of the project and execute the [console.py](./console.py) file
+```
+$ ./console.py
+```
+In this way, only the file storage type works, which generates a file in which all the information is stored locally, if you want to access the information in the database, the following environment variables must be added , as it's shown in the following  
 
+```
+$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py
+```
+Once the console command is executed should appear:
+```
+(hbnb)
+```
+Here you can type any of the following commands:  
+| Command       |              Syntax                                         |     Output                                             |
+| :------------ | :---------------------------------------------------------: | -----------------------------------------------------: |
+| EOF           | EOF                                                         | Exit interpreter Displays every instance of class name |
+| count         | count [class_name]                                          | Counts the instances of specified class                |
+| create        | create [class_name]                                         | create a new instance with specified name              |
+| destroy       | destroy [class_name] [object_id]                            | Deletes all attributes of class_name.object_id         |
+| help          | help [option]                                               | Shows the help for specified option                    |
+| quit          | quit                                                        | Exit interpreter                                       |
+| show          | show [class_name] [object_id]                               | Displays all attributes                                |
+| update        | update [class_name] [object_id] [update_key] [update_value] | Modifies specified attribute                           |
 
 
 
@@ -164,94 +191,6 @@ List of commands this console current supports:
 * `show` - Prints the string representation of an instance based on the class name and id.
 * `all` - Prints all string representation of all instances based or not on the class name. 
 * `update` - Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file). 
-
-#### `models/` directory contains classes used for this project:
-[base_model.py](/models/base_model.py) - The BaseModel class from which future classes will be derived
-* `def __init__(self, *args, **kwargs)` - Initialization of the base model
-* `def __str__(self)` - String representation of the BaseModel class
-* `def save(self)` - Updates the attribute `updated_at` with the current datetime
-* `def to_dict(self)` - returns a dictionary containing all keys/values of the instance
-
-Classes inherited from Base Model:
-* [amenity.py](/models/amenity.py)
-* [city.py](/models/city.py)
-* [place.py](/models/place.py)
-* [review.py](/models/review.py)
-* [state.py](/models/state.py)
-* [user.py](/models/user.py)
-
-#### `/models/engine` directory contains File Storage class that handles JASON serialization and deserialization :
-[file_storage.py](/models/engine/file_storage.py) - serializes instances to a JSON file & deserializes back to instances
-* `def all(self)` - returns the dictionary __objects
-* `def new(self, obj)` - sets in __objects the obj with key <obj class name>.id
-* `def save(self)` - serializes __objects to the JSON file (path: __file_path)
-* ` def reload(self)` -  deserializes the JSON file to __objects
-
-#### `/tests` directory contains all unit test cases for this project:
-[/test_models/test_base_model.py](/tests/test_models/test_base_model.py) - Contains the TestBaseModel and TestBaseModelDocs classes
-TestBaseModelDocs class:
-* `def setUpClass(cls)`- Set up for the doc tests
-* `def test_pep8_conformance_base_model(self)` - Test that models/base_model.py conforms to PEP8
-* `def test_pep8_conformance_test_base_model(self)` - Test that tests/test_models/test_base_model.py conforms to PEP8
-* `def test_bm_module_docstring(self)` - Test for the base_model.py module docstring
-* `def test_bm_class_docstring(self)` - Test for the BaseModel class docstring
-* `def test_bm_func_docstrings(self)` - Test for the presence of docstrings in BaseModel methods
-
-TestBaseModel class:
-* `def test_is_base_model(self)` - Test that the instatiation of a BaseModel works
-* `def test_created_at_instantiation(self)` - Test created_at is a pub. instance attribute of type datetime
-* `def test_updated_at_instantiation(self)` - Test updated_at is a pub. instance attribute of type datetime
-* `def test_diff_datetime_objs(self)` - Test that two BaseModel instances have different datetime objects
-
-[/test_models/test_amenity.py](/tests/test_models/test_amenity.py) - Contains the TestAmenityDocs class:
-* `def setUpClass(cls)` - Set up for the doc tests
-* `def test_pep8_conformance_amenity(self)` - Test that models/amenity.py conforms to PEP8
-* `def test_pep8_conformance_test_amenity(self)` - Test that tests/test_models/test_amenity.py conforms to PEP8
-* `def test_amenity_module_docstring(self)` - Test for the amenity.py module docstring
-* `def test_amenity_class_docstring(self)` - Test for the Amenity class docstring
-
-[/test_models/test_city.py](/tests/test_models/test_city.py) - Contains the TestCityDocs class:
-* `def setUpClass(cls)` - Set up for the doc tests
-* `def test_pep8_conformance_city(self)` - Test that models/city.py conforms to PEP8
-* `def test_pep8_conformance_test_city(self)` - Test that tests/test_models/test_city.py conforms to PEP8
-* `def test_city_module_docstring(self)` - Test for the city.py module docstring
-* `def test_city_class_docstring(self)` - Test for the City class docstring
-
-[/test_models/test_file_storage.py](/tests/test_models/test_file_storage.py) - Contains the TestFileStorageDocs class:
-* `def setUpClass(cls)` - Set up for the doc tests
-* `def test_pep8_conformance_file_storage(self)` - Test that models/file_storage.py conforms to PEP8
-* `def test_pep8_conformance_test_file_storage(self)` - Test that tests/test_models/test_file_storage.py conforms to PEP8
-* `def test_file_storage_module_docstring(self)` - Test for the file_storage.py module docstring
-* `def test_file_storage_class_docstring(self)` - Test for the FileStorage class docstring
-
-[/test_models/test_place.py](/tests/test_models/test_place.py) - Contains the TestPlaceDoc class:
-* `def setUpClass(cls)` - Set up for the doc tests
-* `def test_pep8_conformance_place(self)` - Test that models/place.py conforms to PEP8.
-* `def test_pep8_conformance_test_place(self)` - Test that tests/test_models/test_place.py conforms to PEP8.
-* `def test_place_module_docstring(self)` - Test for the place.py module docstring
-* `def test_place_class_docstring(self)` - Test for the Place class docstring
-
-[/test_models/test_review.py](/tests/test_models/test_review.py) - Contains the TestReviewDocs class:
-* `def setUpClass(cls)` - Set up for the doc tests
-* `def test_pep8_conformance_review(self)` - Test that models/review.py conforms to PEP8
-* `def test_pep8_conformance_test_review(self)` - Test that tests/test_models/test_review.py conforms to PEP8
-* `def test_review_module_docstring(self)` - Test for the review.py module docstring
-* `def test_review_class_docstring(self)` - Test for the Review class docstring
-
-[/test_models/state.py](/tests/test_models/test_state.py) - Contains the TestStateDocs class:
-* `def setUpClass(cls)` - Set up for the doc tests
-* `def test_pep8_conformance_state(self)` - Test that models/state.py conforms to PEP8
-* `def test_pep8_conformance_test_state(self)` - Test that tests/test_models/test_state.py conforms to PEP8
-* `def test_state_module_docstring(self)` - Test for the state.py module docstring
-* `def test_state_class_docstring(self)` - Test for the State class docstring
-
-[/test_models/user.py](/tests/test_models/test_user.py) - Contains the TestUserDocs class:
-* `def setUpClass(cls)` - Set up for the doc tests
-* `def test_pep8_conformance_user(self)` - Test that models/user.py conforms to PEP8
-* `def test_pep8_conformance_test_user(self)` - Test that tests/test_models/test_user.py conforms to PEP8
-* `def test_user_module_docstring(self)` - Test for the user.py module docstring
-* `def test_user_class_docstring(self)` - Test for the User class docstring
-
 
 ## Examples of use
 ```
@@ -287,6 +226,5 @@ David Ovalle - [Github](https://github.com/Nukemenonai) / [Twitter](https://twit
 Santiago Peña Mosquera - [Github](https://github.com/santiagopemo) / [Twitter](https://twitter.com/Santiag11470161)  
 Juan Gomez Rodriguez - [Github](https://github.com/JuanJoseGomezR) / [Twitter](https://twitter.com/J_Gmez)  
 
-Second part of Airbnb: Joann Vuong
 ## License
 Public Domain. No copy write protection. 
