@@ -15,7 +15,7 @@ This is the final result of a project that was carried out from scratch in four 
 * [AirBnB_clone_v2](https://github.com/santiagopemo/AirBnB_clone_v2)
 * [AirBnB_clone](https://github.com/santiagopemo/AirBnB_clone)
 
-## Table of Content
+## Table Of Content
 * [Environment](#environment)
 * [Installation](#installation)
 * [File Descriptions](#file-descriptions)
@@ -44,7 +44,7 @@ $ cd AirBnb_clone_v4
 ```
 $ pip3 install -r requirements.txt
 ```
-### Setting up the database
+### Setting Up The Database
 * Once you have installed the MySQL-server make sure to have the service running:
 ```
 $ sudo service mysql start
@@ -59,7 +59,7 @@ cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -p
 ```
 **Note:** The operation of the two previous commands depend on how you have configured your mysql server, in general terms these commands work with the default configuration.
 
-### Populate the database
+### Populate The Database
 Files [7-dump.sql](./7-dump.sql), [10-dump.sql](./10-dump.sql) and [100-dump.sql](./100-dump.sql) have SQL statements that you can run to populate the database:
 ```
 cat 100-dump.sql | sudo mysql
@@ -166,6 +166,7 @@ Once the console command is executed should appear:
 ```
 (hbnb)
 ```
+### Available Commands And Its Usage:
 Here you can type any of the following commands:  
 | Command       |              Syntax                                         |     Output                                             |
 | :------------ | :---------------------------------------------------------: | -----------------------------------------------------: |
@@ -179,21 +180,7 @@ Here you can type any of the following commands:
 | show          | show [class_name] [object_id]                               | Displays all attributes                                |
 | update        | update [class_name] [object_id] [update_key] [update_value] | Modifies specified attribute                           |
 
-
-
-## File Descriptions
-[console.py](console.py) - the console contains the entry point of the command interpreter. 
-List of commands this console current supports:
-* `EOF` - exits console 
-* `quit` - exits console
-* `<emptyline>` - overwrites default emptyline method and does nothing
-* `create` - Creates a new instance of`BaseModel`, saves it (to the JSON file) and prints the id
-* `destroy` - Deletes an instance based on the class name and id (save the change into the JSON file). 
-* `show` - Prints the string representation of an instance based on the class name and id.
-* `all` - Prints all string representation of all instances based or not on the class name. 
-* `update` - Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file). 
-
-## Examples of use
+### Examples Of Use
 ```
 vagrantAirBnB_clone$./console.py
 (hbnb) help
@@ -220,6 +207,11 @@ EOF  all  create  destroy  help  quit  show  update
 No known bugs at this time. 
 
 ## Authors
+### Santiago Peña Mosquera  
+Mechatronic engineer and student of software development in holberton school, lover of building new things from scratch, that's why my passion for programming, starting from an empty sheet and turning it into a solution for real problems.  
+<a href="https://www.linkedin.com/in/santiago-pe%C3%B1a-mosquera-abaa20196/" target="_blank"><img width="20" height="20" src="./readme_images/linkedin-icon.svg"></a>
+<a href="https://twitter.com/santiagopemo" target="_blank"><img width="20" height="20" src="./readme_images/twitter-icon.svg"></a>
+<a href="https://github.com/santiagopemo/" target="_blank"><img width="20" height="20" src="./readme_images/github-icon.svg"></a>
 Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)  
 Jhoan Zamora - [Github](https://github.com/jzamora5) / [Twitter](https://twitter.com/JhoanZamora10)  
