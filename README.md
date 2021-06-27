@@ -169,7 +169,8 @@ Once the console command is executed should appear:
 Here you can type any of the following commands:  
 | Command       |              Syntax                                         |     Output                                             |
 | :------------ | :---------------------------------------------------------: | -----------------------------------------------------: |
-| EOF           | EOF                                                         | Exit interpreter Displays every instance of class name |
+| EOF           | EOF                                                         | Exit interpreter                                       |
+| all           | all [class_name]                                            | Displays every instance of class name                  |
 | count         | count [class_name]                                          | Counts the instances of specified class                |
 | create        | create [class_name]                                         | create a new instance with specified name              |
 | destroy       | destroy [class_name] [object_id]                            | Deletes all attributes of class_name.object_id         |
