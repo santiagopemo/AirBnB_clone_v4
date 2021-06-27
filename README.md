@@ -29,7 +29,8 @@ This is the final result of a project that was carried out from scratch in four 
     * [Web Static](#Web-Static)
         * [Deployment](#Deployment)
     * [Console](#Console)
-    * [Examples of use](#Examples-of-use)
+        * [Available Commands And Its Usage](#Available-Commands-And-Its-Usage)
+        * [Examples of use](#Examples-of-use)
 * [Bugs](#bugs)
 * [Authors](#authors)
 * [License](#license)
@@ -176,7 +177,7 @@ Once the console command is executed should appear:
 ```
 (hbnb)
 ```
-#### Available Commands And Its Usage:
+#### Available Commands And Its Usage
 Here you can type any of the following commands:  
 | Command       |              Syntax                                         |     Output                                             |
 | :------------ | :---------------------------------------------------------: | -----------------------------------------------------: |
