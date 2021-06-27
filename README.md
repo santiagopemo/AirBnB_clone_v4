@@ -18,9 +18,18 @@ This is the final result of a project that was carried out from scratch in four 
 ## Table Of Content
 * [Environment](#environment)
 * [Installation](#installation)
-* [File Descriptions](#file-descriptions)
+    * [Dependencies](#Dependencies)
+    * [Setting Up The Database](#Setting-Up-The-Database)
+    * [Populate The Database](#Populate-The-Database)
 * [Usage](#usage)
-* [Examples of use](#examples-of-use)
+    * [Environment Variables](#Environment-Variables)
+    * [API](#API)
+    * [Web Dynamic](#Web-Dynamic)
+    * [Web Flask](#Web-Flask)
+    * [Web Static](#Web-Static)
+        * [Deployment](#Deployment)
+    * [Console](#Console)
+    * [Examples of use](#Examples-of-use)
 * [Bugs](#bugs)
 * [Authors](#authors)
 * [License](#license)
@@ -40,6 +49,7 @@ $ git clone "https://github.com/santiagopemo/AirBnB_clone_v4"
 ```
 $ cd AirBnb_clone_v4
 ```
+### Dependencies
 * Once you have installed python3 install all pip3 dependencies in the [requirements.txt](./requirements.txt) file: 
 ```
 $ pip3 install -r requirements.txt
@@ -117,10 +127,10 @@ Once you launch the server you can go to the endpoint `/hbnb/`to see the web sit
 </p>
 
 **Note:** By default Flask runs its applications on port 5000, so it is recommended to deactivate the server in the previous point before deploying this, or change the port.
-## Web Static
+### Web Static
 Another version of this project is displaying static content which can be seen in the [web_static/](./web_static/) folder.  
 In addition to the static content, different programs were made to deploy it on remote servers using Bash scripts and Python scripts with Fabric
-### Deployment
+#### Deployment
 To make the deployment you first need to access the server create a new user called `ubuntu` and run the script [0-setup_web_static.sh](./0-setup_web_static.sh)
 ```
 $ sudo adduser ubuntu
@@ -151,7 +161,7 @@ Once the previous steps have been carried out, the content can be viewed by acce
   <img width="100%" height="auto" src="./readme_images/web_static.PNG">
 </p>
 
-## Console
+### Console
 One of the main features of this project is its console from which you can test the application's backend
 to access it, you must first be at the root of the project and execute the [console.py](./console.py) file
 ```
@@ -166,7 +176,7 @@ Once the console command is executed should appear:
 ```
 (hbnb)
 ```
-### Available Commands And Its Usage:
+#### Available Commands And Its Usage:
 Here you can type any of the following commands:  
 | Command       |              Syntax                                         |     Output                                             |
 | :------------ | :---------------------------------------------------------: | -----------------------------------------------------: |
@@ -180,7 +190,7 @@ Here you can type any of the following commands:
 | show          | show [class_name] [object_id]                               | Displays all attributes                                |
 | update        | update [class_name] [object_id] [update_key] [update_value] | Modifies specified attribute                           |
 
-### Examples Of Use
+#### Examples Of Use
 ```
 vagrantAirBnB_clone$./console.py
 (hbnb) help
