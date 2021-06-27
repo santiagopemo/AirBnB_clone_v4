@@ -209,15 +209,32 @@ No known bugs at this time.
 ## Authors
 ### Santiago Peña Mosquera  
 Mechatronic engineer and student of software development in holberton school, lover of building new things from scratch, that's why my passion for programming, starting from an empty sheet and turning it into a solution for real problems.  
-<a href="https://www.linkedin.com/in/santiago-pe%C3%B1a-mosquera-abaa20196/" target="_blank"><img width="20" height="20" src="./readme_images/linkedin-icon.svg"></a>
+<a href="https://www.linkedin.com/in/santiago-pe%C3%B1a-mosquera-abaa20196" target="_blank"><img width="20" height="20" src="./readme_images/linkedin-icon.svg"></a>
 <a href="https://twitter.com/santiagopemo" target="_blank"><img width="20" height="20" src="./readme_images/twitter-icon.svg"></a>
-<a href="https://github.com/santiagopemo/" target="_blank"><img width="20" height="20" src="./readme_images/github-icon.svg"></a>
-Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
-Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)  
-Jhoan Zamora - [Github](https://github.com/jzamora5) / [Twitter](https://twitter.com/JhoanZamora10)  
-David Ovalle - [Github](https://github.com/Nukemenonai) / [Twitter](https://twitter.com/disartDave)  
-Santiago Peña Mosquera - [Github](https://github.com/santiagopemo) / [Twitter](https://twitter.com/Santiag11470161)  
-Juan Gomez Rodriguez - [Github](https://github.com/JuanJoseGomezR) / [Twitter](https://twitter.com/J_Gmez)  
+<a href="https://github.com/santiagopemo" target="_blank"><img width="20" height="20" src="./readme_images/github-icon.svg"></a>  
+
+### Juan Gomez Rodriguez  
+19 year old Software Engineering student at Holberton School. I am a positive and creative person who is always willing to listen to other people's ideas.  
+<a href="https://www.linkedin.com/in/juan-jos%C3%A9-g%C3%B3mez-1b8b801a0/" target="_blank"><img width="20" height="20" src="./readme_images/linkedin-icon.svg"></a>
+<a href="https://twitter.com/J_Gmez" target="_blank"><img width="20" height="20" src="./readme_images/twitter-icon.svg"></a>
+<a href="https://github.com/JuanJoseGomezR" target="_blank"><img width="20" height="20" src="./readme_images/github-icon.svg"></a>
+
+### Alexa Orrico  
+<a href="https://twitter.com/alexa_orrico" target="_blank"><img width="20" height="20" src="./readme_images/twitter-icon.svg"></a>
+<a href="https://github.com/alexaorrico" target="_blank"><img width="20" height="20" src="./readme_images/github-icon.svg"></a>  
+
+### Jennifer Huang  
+<a href="https://twitter.com/earthtojhuang" target="_blank"><img width="20" height="20" src="./readme_images/twitter-icon.svg"></a>
+<a href="https://github.com/jhuang10123" target="_blank"><img width="20" height="20" src="./readme_images/github-icon.svg"></a>  
+
+### Jhoan Zamora  
+<a href="https://twitter.com/JhoanZamora10" target="_blank"><img width="20" height="20" src="./readme_images/twitter-icon.svg"></a>
+<a href="https://github.com/jzamora5" target="_blank"><img width="20" height="20" src="./readme_images/github-icon.svg"></a>  
+
+### David Ovalle  
+<a href="https://twitter.com/disartDave" target="_blank"><img width="20" height="20" src="./readme_images/twitter-icon.svg"></a>
+<a href="https://github.com/Nukemenonai" target="_blank"><img width="20" height="20" src="./readme_images/github-icon.svg"></a>  
+ 
 
 ## License
 Public Domain. No copy write protection. 
