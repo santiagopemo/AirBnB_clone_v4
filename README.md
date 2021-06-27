@@ -213,6 +213,15 @@ EOF  all  create  destroy  help  quit  show  update
 ** no instance found **
 (hbnb) quit
 ```
+### Tests
+
+For this project, multiple tests were carried out in order to ensure the quality of the software, all of them can be found in the [tests](./tests) folder.
+```
+$ HBNB_ENV=test HBNB_MYSQL_USER=hbnb_test HBNB_MYSQL_PWD=hbnb_test_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_test_db HBNB_TYPE_STORAGE=db python3 -m unittest discover tests
+```
+```
+$ python3 -m unittest discover tests
+```
 
 ## Bugs
 No known bugs at this time. 
