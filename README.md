@@ -114,7 +114,34 @@ Once you launch the server you can go to the endpoint `/hbnb/`to see the web sit
 </p>
 
 **Note:** By default Flask runs its applications on port 5000, so it is recommended to deactivate the server in the previous point before deploying this, or change the port.
+## Web Static
+Another version of this project is displaying static content which can be seen in the `/web_static/` folder.  
+In addition to the static content, different programs were made to deploy it on remote servers using Bash scripts and Python scripts with Fabric
+### Deployment
+To make the deployment you first need to access the server create a new user called `ubuntu` and run the script [0-setup_web_static.sh](./0-setup_web_static.sh)
+```
+$ sudo adduser ubuntu
+```
+```
+$ ./0-setup_web_static.sh
+```
 
+This script will install the NGINX web server and configure it to run the application creating the necessary directories for it.  
+
+Once the servers on which you want to perform the deployment have been configured, execute the script [3-deploy_web_static.py](./3-deploy_web_static.py) using Fabric, that creates and distributes an archive to the web servers  
+
+Before executing the script, you must place the IP addresses of the servers to which you want to distribute the new file, for this you must enter the file [3-deploy_web_static.py](./3-deploy_web_static.py), in line 10 in the variable env.host assign a list with the IPs , by default this variable has assigned IP addresses which must be changed
+```
+10  env.hosts = ['<your server IP address>', '<your other server IP address>', ....]
+```
+
+Once the IP addresses have been set, the script is executed with Fabric
+```
+$ fab -f 3-deploy_web_static.py deploy -i <my_ssh_private_key> -u ubuntu
+```
+where `<my_ssh_private_key>` is the private key to access your servers via SSH  
+
+This command will generate a directory called `/versions/` in which the files generated with the name `web_static_<year><month><day><hour><minute><second>.tgz` will be found.  
 ## Console
 
 
