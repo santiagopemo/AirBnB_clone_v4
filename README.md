@@ -142,6 +142,12 @@ $ fab -f 3-deploy_web_static.py deploy -i <my_ssh_private_key> -u ubuntu
 where `<my_ssh_private_key>` is the private key to access your servers via SSH  
 
 This command will generate a directory called `/versions/` in which the files generated with the name `web_static_<year><month><day><hour><minute><second>.tgz` will be found.  
+
+Once the previous steps have been carried out, the content can be viewed by accessing the url `http://<your_server_IP>/hbnb_static/102-index.html`  
+<p align="center">
+  <img width="100%" height="auto" src="./readme_images/web_static.PNG">
+</p>
+
 ## Console
 
 
